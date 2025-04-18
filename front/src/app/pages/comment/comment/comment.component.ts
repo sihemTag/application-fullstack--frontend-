@@ -15,12 +15,17 @@ export class CommentComponent implements OnInit {
   constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
+    this.loadComments();
+    
+  }
+
+  public loadComments() {
     this.commentService.getCommentsByArticle(this.articleId).subscribe({
       next: (list) => {
         this.comments = list;
-        console.log(this.comments);
       }
     });
+
   }
 
 }
