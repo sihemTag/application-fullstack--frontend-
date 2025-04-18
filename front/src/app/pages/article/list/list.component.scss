@@ -1,0 +1,46 @@
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px;
+  
+}
+
+mat-card {
+  width: 300px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(226, 226, 226);
+}
+
+mat-card:hover {
+  background-color: rgb(150, 150, 150);;
+}
+mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.article-date {
+  text-align: left;
+}
+
+.article-author {
+  text-align: right;
+}
+
+mat-card-content {
+  padding: 15px;
+  font-size: 16px;
+}
+
+mat-card-actions {
+  text-align: center;
+}

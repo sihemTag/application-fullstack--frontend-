@@ -1,0 +1,13 @@
+<div class="menu"> 
+    <img src="/assets/logo_p6.png" alt="logo"  />
+    <div *ngIf="showElements" class="elements-droite">
+        <button style="color: rgb(217, 18, 18);">Se déconnecter</button>
+        <button style="color: rgb(177, 131, 221);">Article</button>
+        <button>Thèmes</button>
+        <span (click)="goToAccount()">
+            <i class="fa-solid fa-circle-user"></i>
+        </span>
+        
+    </div>
+</div>
+<hr>

@@ -1,0 +1,59 @@
+<!-- <h2 mat-dialog-title>{{ article.titre }}</h2>
+
+<mat-dialog-content>
+  <div class="article-meta">
+    <span class="article-date">{{ article.created_at | date: 'short' }}</span>
+    <span class="article-author">{{ article.owner_id.name }}</span>
+  </div>
+
+
+  <p>{{ article.description }}</p>
+
+  <mat-divider></mat-divider>
+  <div class="comments" style="background-color: red;">
+    <app-comment [articleId]="article.id"></app-comment>
+  </div>
+
+  <div class="comment-section">
+    <textarea [(ngModel)]="comment" placeholder="Ajoutez un commentaire..."></textarea>
+    <button mat-icon-button (click)="sendComment(comment)">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Fermer</button>
+</mat-dialog-actions>
+ -->
+
+ <h2 mat-dialog-title>{{ article.titre }}</h2>
+
+<mat-dialog-content>
+
+  <div class="article-meta">
+    <span class="article-date">{{ article.created_at | date: 'short' }}</span>
+    <span class="article-author">{{ article.owner_id.name }}</span>
+  </div>
+
+  <p class="article-description">{{ article.description }}</p>
+
+  <mat-divider></mat-divider>
+
+  <div class="comments-section">
+    <h3>Commentaires</h3>
+    <app-comment [articleId]="article.id"></app-comment>
+  </div>
+
+  <div class="comment-form">
+    <textarea [(ngModel)]="comment" placeholder="Ajoutez un commentaire..."></textarea>
+    <button mat-icon-button (click)="sendComment(comment)">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Fermer</button>
+</mat-dialog-actions>

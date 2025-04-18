@@ -1,0 +1,14 @@
+<app-menu [showElements]="true"></app-menu>
+
+<div class="container">
+    <button class="createArticle"  (click) = "openArticleForm()">Créer un article</button>
+    <!-- POPIN -->
+    <div class="modal-overlay" *ngIf="showArticleForm">
+        <div class="modal-content">
+            <app-article-form (closeForm)="closeArticleForm()"></app-article-form>
+        </div>
+    </div>
+  
+    <button class="filter">Trier par <i class="fa-solid fa-arrow-down"></i> </button>
+</div>
+<app-list></app-list>
