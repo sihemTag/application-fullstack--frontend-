@@ -19,4 +19,12 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/account']);
   }
 
+  goToThemes(){
+    this.router.navigate(['/themes']);
+  }
+
+  goToArticles(){
+    this.router.navigate(['/articles']);
+  }
+
 }

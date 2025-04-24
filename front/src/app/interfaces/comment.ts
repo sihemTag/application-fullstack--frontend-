@@ -3,9 +3,9 @@ import { User } from "./user";
 
 export interface Comment {
 	id: number,
-	article: Article,
-	user: User,
+	article_id: Article,
+	user_id: User,
     commentaire: string,
-	createdAt: Date,
-	updatedAt: Date
+	created_at: Date,
+	updated_at: Date
 }

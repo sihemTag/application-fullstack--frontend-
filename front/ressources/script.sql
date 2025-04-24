@@ -30,12 +30,20 @@ CREATE TABLE `ARTICLE` (
 );
 
 CREATE TABLE comment (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    artical_id INT NOT NULL,
-    user_id INT NOT NULL,
-    comment TEXT,
-    created_at DATETIME,
-    updated_at DATETIME,
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `artical_id` INT NOT NULL,
+    `user_id` INT NOT NULL,
+    `comment` TEXT,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
     CONSTRAINT fk_comment_article FOREIGN KEY (artical_id) REFERENCES article(id),
     CONSTRAINT fk_comment_user FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+CREATE TABLE abonnement (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,               
+    `theme_id` INT NOT NULL,                             
+    `user_id` INT NOT NULL,                               
+    FOREIGN KEY (theme_id) REFERENCES theme(id),       
+    FOREIGN KEY (user_id) REFERENCES users(id)         
 );

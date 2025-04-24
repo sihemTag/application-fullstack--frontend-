@@ -21,9 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { AccountComponent } from './pages/auth/components/account/account.component';
 import { CommentComponent } from './pages/comment/comment/comment.component';
+import { ThemeComponent } from './pages/theme/theme/theme.component';
+import { AbonnementComponent } from './pages/abonnement/abonnement/abonnement.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegisterComponent, MenuComponent, LoginComponent, ArticlesComponent, ArticleFormComponent, ListComponent, DetailComponent, AccountComponent, CommentComponent],
+  declarations: [AppComponent, HomeComponent, RegisterComponent, MenuComponent, LoginComponent, ArticlesComponent, ArticleFormComponent, ListComponent, DetailComponent, AccountComponent, CommentComponent, ThemeComponent, AbonnementComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -2,13 +2,13 @@
   <mat-card *ngFor="let article of articles" class="article-card" (click)="openArticleDetails(article)">
     <!-- Titre de l'article -->
     <mat-card-header>
-      <mat-card-title>{{ article.titre}}</mat-card-title>
+      <mat-card-title>{{ article.title}}</mat-card-title>
     </mat-card-header>
 
     <!--la date et l'auteur -->
     <div class="article-meta">
       <span class="article-date">{{ article.created_at | date: 'short' }}</span>
-      <span class="article-author">{{ article.owner_id.name }}</span>
+      <span class="article-author">{{ article.owner.name }}</span>
     </div>
 
     <!-- Description de l'article -->

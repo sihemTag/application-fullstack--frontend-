@@ -23,6 +23,7 @@ export class CommentComponent implements OnInit {
     this.commentService.getCommentsByArticle(this.articleId).subscribe({
       next: (list) => {
         this.comments = list;
+        console.log('comments: ',list)
       }
     });
 
