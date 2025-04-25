@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,9 +23,11 @@ import { AccountComponent } from './pages/auth/components/account/account.compon
 import { CommentComponent } from './pages/comment/comment/comment.component';
 import { ThemeComponent } from './pages/theme/theme/theme.component';
 import { AbonnementComponent } from './pages/abonnement/abonnement/abonnement.component';
+import { AuthInitService } from './services/authInitService';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegisterComponent, MenuComponent, LoginComponent, ArticlesComponent, ArticleFormComponent, ListComponent, DetailComponent, AccountComponent, CommentComponent, ThemeComponent, AbonnementComponent],
+  declarations: [AppComponent, HomeComponent, RegisterComponent, MenuComponent, LoginComponent, ArticlesComponent, ArticleFormComponent, ListComponent, DetailComponent, AccountComponent, CommentComponent, ThemeComponent, AbonnementComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,7 +43,13 @@ import { AbonnementComponent } from './pages/abonnement/abonnement/abonnement.co
   ],
   providers: [{provide: HTTP_INTERCEPTORS,
               useClass: AuthInterceptor,
-              multi: true}],
+              multi: true},
+              {
+                provide: APP_INITIALIZER,
+                useFactory: (authInit: AuthInitService) => () => authInit.init(),
+                deps: [AuthInitService],
+                multi: true
+              }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

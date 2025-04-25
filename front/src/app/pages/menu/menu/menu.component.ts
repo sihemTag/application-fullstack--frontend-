@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/sessionService';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +11,7 @@ export class MenuComponent implements OnInit {
 
   @Input() showElements: boolean = false;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private sessionService: SessionService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,11 @@ export class MenuComponent implements OnInit {
 
   goToArticles(){
     this.router.navigate(['/articles']);
+  }
+
+  logout(): void {
+    this.sessionService.logOut();
+    this.router.navigate(['/']);
   }
 
 }

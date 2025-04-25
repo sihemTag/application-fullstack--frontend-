@@ -3,7 +3,7 @@
 <mat-dialog-content>
 
   <div class="article-meta">
-    <span class="article-date">{{ article.created_at | date: 'short' }}</span>
+    <span class="article-date">{{ article.created_at | date:'dd/MM/yyyy HH:mm:ss' }}</span>
     <span class="article-author">{{ article.owner.name }}</span>
   </div>
 

@@ -11,6 +11,7 @@ export class ArticlesComponent implements OnInit {
 
   showArticleForm = false;
   articles: Article[]= [];
+  sortAscending = true;
 
   constructor(private articleService:ArticleService) { }
 
@@ -37,5 +38,10 @@ export class ArticlesComponent implements OnInit {
       }
     );
   }
+
+  toggleSort() {
+    this.sortAscending = !this.sortAscending;
+  }
+  
 
 }

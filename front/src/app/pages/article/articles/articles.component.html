@@ -9,6 +9,7 @@
         </div>
     </div>
   
-    <button class="filter">Trier par <i class="fa-solid fa-arrow-down"></i> </button>
+    <button class="filter" (click)="toggleSort()">Trier par 
+        <i class="fa-solid" [ngClass]="sortAscending ? 'fa-arrow-down' : 'fa-arrow-up'"></i> </button>
 </div>
-<app-list></app-list>
+<app-list [sortAscending]="sortAscending"></app-list>

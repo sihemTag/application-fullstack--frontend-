@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Article } from 'src/app/interfaces/article';
 import { ArticleService } from '../services/article.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,6 +11,7 @@ import { DetailComponent } from '../detail/detail.component';
 })
 export class ListComponent implements OnInit {
   articles: Article[] = [];
+  @Input() sortAscending: boolean = true;
 
   constructor(private articleService: ArticleService, public dialog: MatDialog) {}
 
@@ -35,6 +36,19 @@ export class ListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('La popin a été fermée');
     });
+  }
+
+  sortArticles(): void {
+    this.sortAscending = !this.sortAscending;
+    this.articles.sort((a, b) => {
+      const dateA = new Date(a.created_at).getTime();
+      const dateB = new Date(b.created_at).getTime();
+      return this.sortAscending ? dateA - dateB : dateB - dateA;
+    });
+  }
+
+  ngOnChanges(): void {
+    this.sortArticles();
   }
 
 }
