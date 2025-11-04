@@ -6,7 +6,7 @@ Ce projet est une applciation web conçue avec Java/Springboot et Angular, qui v
 
 ## Guide d'installation
 - Cloner ce projet
-- Ìnstaller les modules necéssaires avec la commande `npm install`
+- Installer les modules necéssaires avec la commande `npm install`
 - Lancer le front avec `ng serve`
 - Aller sur localhost:4200
 
